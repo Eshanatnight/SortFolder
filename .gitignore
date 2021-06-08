@@ -1,0 +1,13 @@
+# Virtual Environment
+venv
+
+# Cache
+__pycache__
+
+# IDE and Text Editor files
+.idea
+.vscode
+
+# Build Details Files
+build
+*.spec
