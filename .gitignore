@@ -11,3 +11,6 @@ __pycache__
 # Build Details Files
 build
 *.spec
+
+# Discription Text Files for Future Functions
+todo.txt
