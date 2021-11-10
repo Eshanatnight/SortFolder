@@ -63,7 +63,7 @@ If you are on Linux
     python FolderSort.py
 ```
 
-You run the script AFTER you have changed the path in the script itself.Pretty Self Explanatory. Well What would you expect? :)
+You run the script AFTER you have changed the path in the script itself. Pretty Self Explanatory. Well What would you expect? :)
 
 </br>
 
