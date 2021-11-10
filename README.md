@@ -16,6 +16,8 @@ Hence this Python program was born.
 
 ---
 
+</br>
+
 ## Useage
 
 </br>
@@ -29,6 +31,8 @@ You run the script AFTER you have changed the path in the script itself.Pretty S
 </br>
 
 ---
+
+</br>
 
 ## Issues
 
@@ -55,6 +59,7 @@ Some issues I have noticed are:
 
 ---
 
+</br>
 
 ## Todos / To be Decided:
 
@@ -68,6 +73,7 @@ Some issues I have noticed are:
 
 ---
 
+</br>
 
 ## Licensing Information:
 
