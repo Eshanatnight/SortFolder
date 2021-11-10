@@ -20,9 +20,44 @@ Hence this Python program was born.
 
 </br>
 
+## Getting Started:
+
+</br>
+
+If you don't have Python installed on your computer you can download it from here:
+
+- [Python Download Link](https://www.python.org/downloads/)
+
+or for Windows with winget CLI:
+
+```terminal
+    winget install Python.Python.3
+```
+
+If you are on Linux
+
+```terminal
+    sudo apt update
+```
+
+</br>
+
+---
+
+</br>
+
 ## Useage
 
 </br>
+
+
+```terminal
+    sudo apt install python3
+```
+
+```terminal
+    pip install -r requirements.txt
+```
 
 ```terminal
     python FolderSort.py
