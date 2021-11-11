@@ -32,3 +32,6 @@ __pycache__
 /build
 # Visual Studio
 /bin
+
+# Intermediates Folder
+/x64
