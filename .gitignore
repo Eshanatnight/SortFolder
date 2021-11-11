@@ -1,16 +1,34 @@
+# Stuff That is Not Language Specific
+# IDE and Text Editor files
+/.idea
+/.vscode
+/.vs
+
+# Discription Text Files for Future Functions
+todo.txt
+
+# Visual Studio
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+# Python Implementaion
+
 # Virtual Environment
 venv
 
 # Cache
 __pycache__
 
-# IDE and Text Editor files
-.idea
-.vscode
-
 # Build Details Files
-build
 *.spec
 
-# Discription Text Files for Future Functions
-todo.txt
+
+# CXX Implementation
+
+# Build Folder
+#CMAKE
+/build
+# Visual Studio
+/bin
