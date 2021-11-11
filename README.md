@@ -71,7 +71,7 @@ You run the script AFTER you have changed the path in the script itself. Pretty 
 
 </br>
 
-## Issues
+## Issues I Have
 
 </br>
 
@@ -93,6 +93,12 @@ Some issues I have noticed are:
 - Python Program is slow to run for large number files that need to be sorted.
 
         Even though realistically most of the time I would expect anyone to use this won't use it for that high amount of files.
+
+- The Environment Setting and the [Script](./src/DownloadSort.py) in general is not implemented Properly. Specifically the issues with the Watchdog Library.
+    Hence the Library is removed from the [Requirement](./requirments.txt) file.
+
+    **Proper Update to the Code of that file is required**
+
 
 ---
 
