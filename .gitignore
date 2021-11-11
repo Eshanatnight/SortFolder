@@ -14,3 +14,13 @@ build
 
 # Discription Text Files for Future Functions
 todo.txt
+
+
+# Miscellaneous
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+/x64
+/bin
+/.vs
