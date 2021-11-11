@@ -1,15 +1,16 @@
 cmake_minimum_required(VERSION 3.0.0)
 project("Folder_Sorter")
 
+set( CMAKE_CXX_STANDARD 20)
+SET(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 include(CTest)
 enable_testing()
 
-add_subdirectory(src/CPP/include)
+add_subdirectory("src/CPP/include/Directory Handler")
 
 add_executable( Folder_Sorter
     src/CPP/main.cpp
-    src/CPP/include/directory_handler.h
-    src/CPP/include/directory_handler.cpp
 )
 
 target_link_libraries( Folder_Sorter
