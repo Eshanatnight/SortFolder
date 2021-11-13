@@ -1,9 +1,0 @@
-add_library( directory_handler
-    directory_handler.h
-    directory_handler.cpp
-)
-
-target_include_directories( directory_handler
-    PUBLIC
-    .
-)

@@ -1,16 +1,16 @@
 #include <iostream>
-#include <filesystem>
-#include "Directory Handler/directory_handler.h"
+#include "utility.h"
+#include "directory_handler.h"
 #define SORTFOLDER "SortFolder.exe"
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     DirectoryHandler object("C:/dev/SortFolder");
     object.getObjects();
 
     if (argc < 2)
     {
-        std::cout << "Usage: " << SORTFOLDER << " <path>" << std::endl;
+        println("Hello");
         return EXIT_FAILURE;
     }
 
