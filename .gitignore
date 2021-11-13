@@ -7,6 +7,9 @@
 # Discription Text Files for Future Functions
 todo.txt
 
+# Jetbrains CLion
+/cmake-build-debug
+
 # Visual Studio
 *.sln
 *.vcxproj
@@ -30,6 +33,8 @@ __pycache__
 # Build Folder
 #CMAKE
 /build
+CPP/CMakeFiles/
+
 # Visual Studio
 /bin
 
