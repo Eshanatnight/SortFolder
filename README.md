@@ -108,7 +108,7 @@ Some issues I have noticed are:
 
 - Pack the script file in a Python Virtual Envirnment Executable. But then at that point the C++ Executable will be more stable and less resource intencive.
 
-    [ * ] Development Started
+    [ x ] Development Started
 
 - Port to CXX so that we can still use the functionality without an interpreter
 
