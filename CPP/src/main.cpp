@@ -13,8 +13,8 @@ int main(int argc, char* argv[])
 	*/
 
 	DirectoryHandler object("C:/Dev/SortFolder");
-	object.getObjects();
-	// std::cout << "This is a Test" << std::endl;
+	object.getContents();
+	object.checkFiles();
 
 
 
