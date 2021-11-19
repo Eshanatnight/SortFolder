@@ -27,6 +27,7 @@ void DirectoryHandler::getContents()
 	}
 }
 
+<<<<<<< HEAD
 
 // Logic to Check if a file has an extension or not
 std::string DirectoryHandler::getExtension(const fs::path& filePath)
@@ -56,6 +57,36 @@ void DirectoryHandler::moveFile(const fs::directory_entry& file, const fs::path&
 	{
 		fs::remove(file.path());
 	}
+=======
+
+// Logic to Check if a file has an extension or not
+std::string DirectoryHandler::getExtension(const fs::directory_entry& file)
+{
+	// We will temporarily store a string file name for each file
+	std::string fileName = file.path().string().erase(0, this->m_directoryPath.string().length() + 1);
+
+	// We get the Position of the '.' character from the end
+	// As long that Position is not npos or the starting index
+	// Then we return the extension substring
+	auto extentionDelimeterPos = 0;
+	extentionDelimeterPos = fileName.find_last_of('.');
+	std::cout << extentionDelimeterPos << std::endl;
+
+	if (extentionDelimeterPos == std::string::npos)
+	{
+		return {};
+	}
+
+	else if (extentionDelimeterPos == 0)
+	{
+		return {};
+	}
+
+	std::cout << "FileName: ";
+	std::cout << fileName << "\t";
+	extentionDelimeterPos++;
+	return file.path().string().substr(extentionDelimeterPos);
+>>>>>>> c041a647a8ae060082d1c6d4bb0ff514af95bc99
 
 	else
 	{
@@ -67,6 +98,7 @@ void DirectoryHandler::moveFile(const fs::directory_entry& file, const fs::path&
 
 void DirectoryHandler::checkFiles()
 {
+<<<<<<< HEAD
 	// Have to define some kind of var newPath
 	// or use an rval move?
 	for (const auto& file : m_files)
@@ -75,6 +107,14 @@ void DirectoryHandler::checkFiles()
 		if (!extension.empty())
 		{
 			moveFile(file, newPath);
+=======
+	for (auto file : m_files)
+	{
+		std::string extension = getExtension(file);
+		if (!extension.empty())
+		{
+			std::cout << "Extension: " << extension << "	File: " << file.path().string() << std::endl;
+>>>>>>> c041a647a8ae060082d1c6d4bb0ff514af95bc99
 		}
 	}
 }

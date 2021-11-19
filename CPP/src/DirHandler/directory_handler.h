@@ -31,8 +31,12 @@ public:
 
 private:
 
+<<<<<<< HEAD
 	void moveFile(const std::filesystem::directory_entry& file, const std::filesystem::path& newPath);
 	std::string getExtension(const std::filesystem::path& filePath);
+=======
+	std::string getExtension(const std::filesystem::directory_entry& file);
+>>>>>>> c041a647a8ae060082d1c6d4bb0ff514af95bc99
 
 
 
