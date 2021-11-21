@@ -31,22 +31,8 @@ public:
 
 private:
 
-<<<<<<< HEAD
-
 	void moveFile(const std::filesystem::directory_entry& file, const std::filesystem::path& newPath);
-	std::string getExtension(const std::filesystem::path& filePath);
-
-	std::string getExtension(const std::filesystem::directory_entry& file);
-
-
-=======
-<<<<<<< HEAD
-	void moveFile(const std::filesystem::directory_entry& file, const std::filesystem::path& newPath);
-	std::string getExtension(const std::filesystem::path& filePath);
-=======
-	std::string getExtension(const std::filesystem::directory_entry& file);
->>>>>>> c041a647a8ae060082d1c6d4bb0ff514af95bc99
->>>>>>> 58429a7aa7a8c831517ae00f57da5ed8f3de2bac
+	std::string getExtension(const std::filesystem::path& filePath);;
 
 
 
