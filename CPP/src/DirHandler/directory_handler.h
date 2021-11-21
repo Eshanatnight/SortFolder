@@ -2,10 +2,6 @@
 #include <filesystem>
 #include <string>
 #include <vector>
-#include <map>  // ! To BE removed
-
-
-#define DEBUG
 
 
 class DirectoryHandler
@@ -14,6 +10,7 @@ private:
 	std::filesystem::path m_directoryPath;
 	std::vector<std::filesystem::directory_entry> m_files;
 	std::vector<std::filesystem::directory_entry> m_directories;
+	std::size_t m_pathLength = 0;
 
 
 public:
@@ -23,20 +20,26 @@ public:
 	DirectoryHandler(const std::string& path);
 
 	/*
-		TODO: Change Name To something Meaningful
 		TODO: Probably Move to Private Section Before Release Build
 	*/
-	void getObjects();
-
+	void getContents();
+	void checkFiles();
 
 	// One function to activate the Program
 	void activate();
 
 
 private:
-	bool file_has_extention(const std::string& fileName);
-	std::optional<std::string> getExtention(const std::string& fileName);
-	std::optional<std::size_t> delimeterCheck(const std::string& fileName);
+
+
+	void moveFile(const std::filesystem::directory_entry& file, const std::filesystem::path& newPath);
+	std::string getExtension(const std::filesystem::path& filePath);
+
+	std::string getExtension(const std::filesystem::directory_entry& file);
+
+
+
+
 
 
 

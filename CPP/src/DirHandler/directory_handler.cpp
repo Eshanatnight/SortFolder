@@ -1,66 +1,84 @@
 #include "directory_handler.h"
 #include <iostream>
-#include <optional>
-// #include <bitset>
+
 namespace fs = std::filesystem;
 
-#ifdef DEBUG
-DirectoryHandler::DirectoryHandler(const std::string& path)
-	: m_directoryPath(path)
-{}
-#endif
 
-void DirectoryHandler::getObjects()
+DirectoryHandler::DirectoryHandler(const std::string& path)
+	: m_directoryPath(path), m_pathLength(path.length())
+{}
+
+
+// Logic that iterates through the directory and logs the contents of the directory
+void DirectoryHandler::getContents()
 {
 	for (auto entry : fs::directory_iterator(this->m_directoryPath))
 	{
+		// If the entry is a directory then log the entry to m_directories
 		if (entry.is_directory())
 		{
 			this->m_directories.emplace_back(std::move(entry));
 		}
+		// Else the entry is logged into m_files
 		else
 		{
-			if (file_has_extention(entry.path)
-				std::cout << getExtention(entry.path().string().erase(0, this->m_directoryPath.string().length() + 1)).value() << std::endl;
-
-				this->m_files.emplace_back(std::move(entry));
+			this->m_files.emplace_back(std::move(entry));
 		}
-
 	}
 }
 
-bool DirectoryHandler::file_has_extention(const fs::directory_entry& file)
+// Logic to Check if a file has an extension or not
+std::string DirectoryHandler::getExtension(const fs::path& filePath)
 {
-	auto extention = getExtention(file.path().string().erase(0, ).value();
+	// We will temporarily store a string file name for each file
+	std::string fileName = filePath.string().erase(0, this->m_directoryPath.string().length() + 1);
 
-	if (!extention.empty())
-		return true;
+	// We get the Position of the '.' character from the end
+	// As long that Position is not npos or the starting index
+	// Then we return the extension substring
+	auto extentionDelimeterPos = fileName.find_last_of('.');
+	// the second condition just checks if the file is not an extention-less hidden file
+	if (extentionDelimeterPos == std::string::npos || extentionDelimeterPos == 0)
+	{
+		return {};
+	}
 
-	return false;
-}
-
-std::optional<std::string> DirectoryHandler::getExtention(const std::string& fileName)
-{
-	auto extentionDelimeter = delimeterCheck(fileName);
-	if (extentionDelimeter)
-		return fileName.substr(extentionDelimeter.value() + 1);
-
-	return "";
-
-}
-
-
-std::optional<std::size_t> DirectoryHandler::delimeterCheck(const std::string& fileName)
-{
-	auto extentionDelimeter = fileName.find_last_of('.');
-	if (extentionDelimeter != std::string::npos)
-		return extentionDelimeter;
-
-	return {};
+	return fileName.substr(++extentionDelimeterPos);
 }
 
 
+// Logic for moving a file
+void DirectoryHandler::moveFile(const fs::directory_entry& file, const fs::path& newPath)
+{
+#ifdef TEST
+	if (fs::copy_file(file.path(), newPath))
+	{
+		fs::remove(file.path());
+	}
+#endif
+}
 
+
+
+
+void DirectoryHandler::checkFiles()
+{
+	// Have to define some kind of var newPath
+	// or use an rval move?
+	for (const auto& file : m_files)
+	{
+		std::string extension = getExtension(file.path());
+		if (!extension.empty())
+		{
+			std::cout << "File: " << file.path().string() << "\t" << "Extension" << extension << "\n";
+			// moveFile(file, newPath);
+		}
+	}
+}
+
+
+// One Function to just activate the Functionality
+// TOBE Written
 void DirectoryHandler::activate()
 {
 
