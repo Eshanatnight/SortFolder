@@ -1,5 +1,6 @@
 #include "directory_handler.h"
 #include <iostream>
+#include <algorithm>
 
 namespace fs = std::filesystem;
 
@@ -46,8 +47,18 @@ std::string DirectoryHandler::getExtension(const fs::path& filePath)
 	return fileName.substr(++extentionDelimeterPos);
 }
 
+//
+bool DirectoryHandler::extensionInList(const std::string& extension)
+{
+	// We will check if the extension is in the list of extensions
+	// If it is then we return true
+	// Else we return false
+	return std::find(this->m_list.begin(), this->m_list.end(), extension) != this->m_list.end();
+}
+
 
 // Logic for moving a file
+// To be designed
 void DirectoryHandler::moveFile(const fs::directory_entry& file, const fs::path& newPath)
 {
 #ifdef TEST
@@ -71,13 +82,16 @@ void DirectoryHandler::checkFiles()
 	for (const auto& file : m_files)
 	{
 		std::string extension = getExtension(file.path());
-		if (!extension.empty())
+
+		if (!extension.empty() && extensionInList(extension))
 		{
-			std::cout << "File: " << file.path().string() << "\t" << "Extension: " << extension << "\n";
+			std::cout << "File: " << file.path().string() << "Extension: " << extension << std::endl;
 			// moveFile(file, newPath);
 		}
 	}
 }
+
+
 
 // One Function to just activate the Functionality
 // TOBE Written

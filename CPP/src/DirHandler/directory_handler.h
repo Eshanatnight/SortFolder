@@ -10,6 +10,7 @@ private:
 	std::filesystem::path m_directoryPath;
 	std::vector<std::filesystem::directory_entry> m_files;
 	std::vector<std::filesystem::directory_entry> m_directories;
+	const std::vector<std::string> m_list = { "c", "cxx", "cpp", "h", "hxx", "hpp" };
 	std::size_t m_pathLength = 0;
 
 
@@ -32,7 +33,8 @@ public:
 private:
 
 	void moveFile(const std::filesystem::directory_entry& file, const std::filesystem::path& newPath);
-	std::string getExtension(const std::filesystem::path& filePath);;
+	std::string getExtension(const std::filesystem::path& filePath);
+	bool extensionInList(const std::string& extension);
 
 
 

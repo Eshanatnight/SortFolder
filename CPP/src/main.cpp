@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
 		}
 	*/
 
-	DirectoryHandler object("C:/Dev/SortFolder");
+	DirectoryHandler object("C:\\Dev\\SortFolder\\CPP\\src");
 	object.getContents();
 	object.checkFiles();
 
