@@ -5,8 +5,8 @@
 namespace fs = std::filesystem;
 
 // pathLength variable may be removed
-DirectoryHandler::DirectoryHandler(const std::string& path)
-	: m_directoryPath(path), m_pathLength(path.length())
+DirectoryHandler::DirectoryHandler(const std::string& path, const std::string& movePath)
+	: m_directoryPath(path), m_movePath(movePath)
 {}
 
 
@@ -47,7 +47,7 @@ std::string DirectoryHandler::getExtension(const fs::path& filePath)
 	return fileName.substr(++extentionDelimeterPos);
 }
 
-//
+// Checks if the extension is in the list
 bool DirectoryHandler::extensionInList(const std::string& extension)
 {
 	// We will check if the extension is in the list of extensions
@@ -58,21 +58,9 @@ bool DirectoryHandler::extensionInList(const std::string& extension)
 
 
 // Logic for moving a file
-// To be designed
-void DirectoryHandler::moveFile(const fs::directory_entry& file, const fs::path& newPath)
+void DirectoryHandler::moveFile(const fs::directory_entry& file)
 {
-#ifdef TEST
-	if (fs::copy_file(file.path(), newPath))
-	{
-		fs::remove(file.path());
-	}
-
-	else
-	{
-		std::cerr << "Move Failed\n";
-		return;
-	}
-#endif
+    fs::rename(file.path(), this->m_movePath / file.path().string().erase(0, m_directoryPath.string().length() + 1));
 }
 
 void DirectoryHandler::checkFiles()
@@ -85,16 +73,14 @@ void DirectoryHandler::checkFiles()
 
 		if (!extension.empty() && extensionInList(extension))
 		{
-			std::cout << "File: " << file.path().string() << "Extension: " << extension << std::endl;
-			// moveFile(file, newPath);
+			moveFile(file);
 		}
 	}
 }
 
-
-
 // One Function to just activate the Functionality
-// TOBE Written
 void DirectoryHandler::activate()
 {
+    getContents();
+    checkFiles();
 }

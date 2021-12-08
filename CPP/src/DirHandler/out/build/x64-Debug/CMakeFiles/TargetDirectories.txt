@@ -1,3 +1,0 @@
-C:/Dev/SortFolder/CPP/src/DirHandler/out/build/x64-Debug/CMakeFiles/DirectoryHandler.dir
-C:/Dev/SortFolder/CPP/src/DirHandler/out/build/x64-Debug/CMakeFiles/edit_cache.dir
-C:/Dev/SortFolder/CPP/src/DirHandler/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir

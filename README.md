@@ -24,6 +24,8 @@ Hence this Python program was born.
 
 </br>
 
+### Python
+
 If you don't have Python installed on your computer you can download it from here:
 
 - [Python Download Link](https://www.python.org/downloads/)
@@ -40,6 +42,20 @@ If you are on Linux
     sudo apt update
 ```
 
+```terminal
+    sudo apt install python3
+```
+
+</br>
+
+### CPP
+
+You will need a C++ compiler to compile the program. There is no easy way to install C++ on Windows.
+
+And Most of the Linux distributions have C++ installed by default.
+
+You will need cmake to build the program.
+
 </br>
 
 ---
@@ -50,6 +66,7 @@ If you are on Linux
 
 </br>
 
+### Python
 
 ```terminal
     sudo apt install python3
@@ -64,6 +81,17 @@ If you are on Linux
 ```
 
 You run the script AFTER you have changed the path in the script itself. Pretty Self Explanatory. Well What would you expect? :)
+
+</br>
+
+### CPP
+
+```terminal
+    mkdir build
+    cd \CPP\src
+    cmake -S. -BSortFolder/build
+    cmake --build SortFolder/build
+```
 
 </br>
 
@@ -119,8 +147,8 @@ Some issues I have noticed are:
     - [x] Searching
     - [x] List Checking
     - [x] Code Cleaning due to git error
-    - [ ] Move Function
-    - [ ] Clean Up Errors/ Exceptions thrown by the Move Function
+    - [x] Move Function
+    - [x] Clean Up Errors/ Exceptions thrown by the Move Function
 
 <b><i>PLUS: always running an instance of python interpreter would problably be inefficient use of CPU use.</i></b>
 
