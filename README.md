@@ -3,7 +3,7 @@
 </br>
 
 ## Backstory
-=======
+
 # <u>Sort Folder Program</u>
 
 </br>
@@ -31,7 +31,7 @@ Hence this Python program was born.
 
 </br>
 
-=======
+
 ### Python
 
 If you don't have Python installed on your computer you can download it from here:
@@ -150,7 +150,7 @@ Some issues I have noticed are:
 - Port to CXX so that we can still use the functionality without an interpreter
 
         PLUS: always running an instance of python interpreter would problably be inefficient use of CPU use.
-=======
+
     - [x] Development Finished
     - [x] Testing Started
     - [x] Testing Finished
